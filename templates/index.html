@@ -170,9 +170,9 @@
             </audio>
             <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
                 <a class="download-btn" href="{{ url_for('static', filename='audio/' + session['id'] + '/' + record.filename) }}" download>Download</a>
-                <form method="POST" action="{{ url_for('delete_audio', audio_id=record.id) }}">
+                <form method="POST" action="{{ url_for('delete_audio', audio_filename=record.filename) }}">
                     <button type="submit" style="background-color:#e74c3c;">Delete</button>
-                </form>
+                </form>                
             </div>
             <p><strong>Text:</strong> {{ record.text }}</p>
             <p><strong>Generated at:</strong> {{ record.timestamp }}</p>
